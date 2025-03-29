@@ -107,24 +107,17 @@ const updateCategory = async (req, res) => {
 
 const deleteCategory = async (req, res) => {
   try {
-    const { id } = req.params.id;
-    if (!id) {
-      return res.status(400).send({
-        success: false,
-        message: "All fields are required",
-      });
-    }
-    const deletedCategory = await categoryModel.findById(id);
-    if (!deletedCategory) {
-      return res.status(500).send({
+    const categoryId = await categoryModel.findById(req.params.id);
+    if (!categoryId) {
+      return res.status(404).send({
         success: false,
         message: "Category not found",
       });
     }
-    await categoryModel.findByIdAndDelete(id);
-    res.status(200).send({
+    await categoryModel.findByIdAndDelete(req.params.id);
+    return res.status(200).send({
       success: true,
-      message: "Category Deleted succssfully",
+      message: "Category deleted successfully",
     });
   } catch (error) {
     console.log(error);
