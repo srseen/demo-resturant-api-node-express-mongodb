@@ -1,5 +1,19 @@
 # ขั้นตอนการเขียน backend ด้วย Node.js
 
+# **การ clone เพื่อใช้งาน**
+
+```jsx
+git clone https://github.com/srseen/demo-auth-node-express-mongodb.git
+```
+
+```jsx
+npm install
+```
+
+- เปลี่ยน env.example เป็น .env
+
+---
+
 # step 1 :
 
 - สร้าง server(file server.js)
@@ -54,16 +68,16 @@ npm install express dotenv cors morgan mongoose nodemon bcrypt jsonwebtoken colo
 # step 2 :
 
 - สร้าง folder สำหรับวางโครงสร้าง project
-    - config (เช่น database config)
-    - models (สร้าง model ในการ create โครงสร้างใน database)
-    - routes (สร้างเส้นทาง route)
-    - controllers (สร้าง logic สำหรับให้ route เรียกใช้งาน)
-    - middleware (สำหรับสร้าง logic สำหรับ permission ต่าง ๆ ก่อนไปทำงานต่อในส่วน logic ใน controller)
+  - config (เช่น database config)
+  - models (สร้าง model ในการ create โครงสร้างใน database)
+  - routes (สร้างเส้นทาง route)
+  - controllers (สร้าง logic สำหรับให้ route เรียกใช้งาน)
+  - middleware (สำหรับสร้าง logic สำหรับ permission ต่าง ๆ ก่อนไปทำงานต่อในส่วน logic ใน controller)
 
 # step 3 :
 
 - สร้าง models สำหรับ วางโครงสร้าง database
-    - สร้างอันที่ง่ายก่อน ⇒ ความสัมพันธ์กับ schema อื่นน้อยที่สุดก่อน
+  - สร้างอันที่ง่ายก่อน ⇒ ความสัมพันธ์กับ schema อื่นน้อยที่สุดก่อน
 
 ```jsx
 // Initialize mongoose
