@@ -12,6 +12,11 @@ const categorySchema = new mongoose.Schema(
       type: String,
       required: [true, "Category description is required"],
     },
+    menu: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Food",
+      required: [true, "Category menu is required"],
+    },
   },
   { timestamps: true }
 );
