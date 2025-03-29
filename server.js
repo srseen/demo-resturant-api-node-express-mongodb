@@ -3,7 +3,6 @@ const express = require("express");
 const dotenv = require("dotenv");
 const morgan = require("morgan");
 const cors = require("cors");
-const { readdirSync } = require("fs");
 const connectDb = require("./config/db");
 require("colors");
 
@@ -28,10 +27,10 @@ app.get("/", (req, res) => {
   res.send(`<h1>Welcome to Express API</h1>`);
 });
 
-// Importing all routes from the Routes folder
-readdirSync("./routes").map((r) =>
-  app.use("/api/v1", require(`./Routes/${r}`))
-);
+app.use("/auth/api/v1", require("./routes/auth.routes"));
+app.use("/resturant/api/v1", require("./routes/resturant.routes"));
+app.use("/category/api/v1", require("./routes/category.routes"));
+app.use("/food/api/v1", require("./routes/food.routes"));
 
 // Starting server
 app.listen(PORT, () => {
