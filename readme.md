@@ -6,6 +6,11 @@ npm install
 
 - เปลี่ยน env.example เป็น .env
 
+```
+PORT=
+MONGODB_URI=
+```
+
 ---
 
 # ขั้นตอนการเขียน backend ด้วย Node.js
