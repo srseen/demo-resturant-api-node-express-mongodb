@@ -1,7 +1,7 @@
 # **การ clone เพื่อใช้งาน**
 
 ```jsx
-git clone https://github.com/srseen/demo-auth-node-express-mongodb.git
+git clone https://github.com/srseen/demo-resturant-api-node-express-mongodb.git
 ```
 
 ```jsx
