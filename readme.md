@@ -1,5 +1,3 @@
-# ขั้นตอนการเขียน backend ด้วย Node.js
-
 # **การ clone เพื่อใช้งาน**
 
 ```jsx
@@ -13,6 +11,8 @@ npm install
 - เปลี่ยน env.example เป็น .env
 
 ---
+
+# ขั้นตอนการเขียน backend ด้วย Node.js
 
 # step 1 :
 
