@@ -3,15 +3,20 @@ const express = require("express");
 const router = express.Router();
 
 // Import resturant controller
-const resturantController = require("../controllers/resturant.controller");
+const {
+  getResturantAll,
+  getResturantById,
+  createResturant,
+  updateResturant,
+  deleteResturant,
+} = require("../controllers/resturant.controller");
 
 // Resturant routes
-router.get("/", resturantController.getAll);
-router.get("/:id", resturantController.getById);
-router.get("/search/:name", resturantController.searchByName);
-router.post("/", resturantController.create);
-router.put("/:id", resturantController.update);
-router.delete("/:id", resturantController.delete);
+router.get("/", getResturantAll);
+router.get("/:id", getResturantById);
+router.post("/", createResturant);
+router.put("/:id", updateResturant);
+router.delete("/:id", deleteResturant);
 
 // Export router
 module.exports = router;

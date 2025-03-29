@@ -3,15 +3,20 @@ const express = require("express");
 const router = express.Router();
 
 // Import food controller
-const foodController = require("../controllers/food.controller");
+const {
+  getFoodAll,
+  getFoodById,
+  createFood,
+  updateFood,
+  deleteFood,
+} = require("../controllers/food.controller");
 
 // Food routes
-router.get("/", foodController.getAll);
-router.get("/:id", foodController.getById);
-router.get("/search/:name", foodController.search);
-router.post("/", foodController.create);
-router.put("/:id", foodController.update);
-router.delete("/:id", foodController.delete);
+router.get("/", getFoodAll);
+router.get("/:id", getFoodById);
+router.post("/", createFood);
+router.put("/:id", updateFood);
+router.delete("/:id", deleteFood);
 
 // Export router
 module.exports = router;
