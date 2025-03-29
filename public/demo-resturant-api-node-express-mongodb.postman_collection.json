@@ -1,0 +1,656 @@
+{
+	"info": {
+		"_postman_id": "1262a42c-b246-4498-8371-be0c06da44a6",
+		"name": "demo-resturant-api-node-express-mongodb",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" width=\"2162\" height=\"1530\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39822252"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "/register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Emily Davis\",\r\n    \"email\": \"emily.davis@example.com\",\r\n    \"password\": \"hashedpassword987\",\r\n    \"role\": \"admin\",\r\n    \"avatar\": \"https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_640.png\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/api/v1/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"emily.davis@example.com\",\r\n    \"password\": \"hashedpassword987\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/api/v1/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/logout",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/auth/api/v1/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"api",
+								"v1",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/v1/user/getUser/?id=67e4ed2618ad64799fbacd58",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"getUser",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "67e4ed2618ad64799fbacd58"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updatePassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/user/updatePassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/resetPassword",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/user/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/user/updateUser",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/deleteUser/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/v1/user/deleteUser/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"deleteUser",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Resturant",
+			"item": [
+				{
+					"name": "/getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/resturant/api/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"resturant",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/get/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/resturant/api/v1/67e822830507f392b2636863",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"resturant",
+								"api",
+								"v1",
+								"67e822830507f392b2636863"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTQzMWExMWEwYTFjNjA2MGY5ZDYwYiIsImlhdCI6MTc0MzAwODI2MiwiZXhwIjoxNzQzNjEzMDYyfQ.Fs4TIo2AqGuaj2ZWoyOJ7g4HHTbylh-hkpBNfLBuwZs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"Pasta Delight\",\r\n    \"description\": \"Homemade Italian pasta with rich flavors.\",\r\n    \"location\": {\r\n      \"latitude\": \"41.9028\",\r\n      \"longitude\": \"12.4964\",\r\n      \"address\": \"789 Rome Plaza, Italy\",\r\n      \"city\": \"Rome\",\r\n      \"country\": \"Italy\"\r\n    },\r\n    \"rating\": 4.7,\r\n    \"menu\": \"660a1f8b5e2b3c001fc9a125\",\r\n    \"image\": \"https://example.com/pasta-delight.jpg\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/resturant/api/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"resturant",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/update/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"Pasta Delight\",\r\n    \"description\": \"Homemade Italian pasta with rich flavors.\",\r\n    \"location\": {\r\n      \"latitude\": \"41.9027\",\r\n      \"longitude\": \"12.4964\",\r\n      \"address\": \"789 Rome Plaza, Italy\",\r\n      \"city\": \"Rome\",\r\n      \"country\": \"Italy\"\r\n    },\r\n    \"rating\": 4.7,\r\n    \"menu\": \"660a1f8b5e2b3c001fc9a125\",\r\n    \"image\": \"https://example.com/pasta-delight.jpg\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/resturant/api/v1/67e822910507f392b2636865",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"resturant",
+								"api",
+								"v1",
+								"67e822910507f392b2636865"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/delete/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/resturant/api/v1/67e822910507f392b2636865",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"resturant",
+								"api",
+								"v1",
+								"67e822910507f392b2636865"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "/getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/category/api/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/get/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/category/api/v1/67e8242f0507f392b263687c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"api",
+								"v1",
+								"67e8242f0507f392b263687c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n    \"name\": \"Pasta\",\r\n    \"description\": \"Delicious homemade pasta with authentic Italian flavors.\",\r\n    \"menu\": \"660a1f8b5e2b3c001fc9a103\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/category/api/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/update/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pasta V1\",\r\n    \"description\": \"Delicious homemade pasta with authentic Italian flavors.\",\r\n    \"menu\": \"660a1f8b5e2b3c001fc9a103\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/category/api/v1/67e8242f0507f392b263687c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"api",
+								"v1",
+								"67e8242f0507f392b263687c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/delete/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/category/api/v1/67e8242f0507f392b263687c",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"api",
+								"v1",
+								"67e8242f0507f392b263687c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Food",
+			"item": [
+				{
+					"name": "/getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/food/api/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"food",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/get/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/food/api/v1/67e826a0ef607139f4498417",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"food",
+								"api",
+								"v1",
+								"67e826a0ef607139f4498417"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Iced Coffee\",\r\n    \"description\": \"Chilled coffee with milk and sugar, served over ice.\",\r\n    \"price\": 4.99,\r\n    \"category\": \"660a1f8b5e2b3c001fc9a205\",\r\n    \"image\": \"https://example.com/iced-coffee.jpg\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/food/api/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"food",
+								"api",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/update/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Iced Tea\",\r\n    \"description\": \"Chilled coffee with milk and sugar, served over ice.\",\r\n    \"price\": 4.99,\r\n    \"category\": \"660a1f8b5e2b3c001fc9a205\",\r\n    \"image\": \"https://example.com/iced-coffee.jpg\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/food/api/v1/67e826a0ef607139f4498417",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"food",
+								"api",
+								"v1",
+								"67e826a0ef607139f4498417"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/delete/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/food/api/v1/67e826a0ef607139f4498417",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"food",
+								"api",
+								"v1",
+								"67e826a0ef607139f4498417"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
