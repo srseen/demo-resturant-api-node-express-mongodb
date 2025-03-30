@@ -1,0 +1,30 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "password": "hashedpassword123",
+    "role": "user",
+    "avatar": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_640.png"
+  },
+  {
+    "name": "Alice Smith",
+    "email": "alice.smith@example.com",
+    "password": "hashedpassword456",
+    "role": "admin",
+    "avatar": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_640.png"
+  },
+  {
+    "name": "Michael Johnson",
+    "email": "michael.johnson@example.com",
+    "password": "hashedpassword789",
+    "role": "user",
+    "avatar": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_640.png"
+  },
+  {
+    "name": "Emily Davis",
+    "email": "emily.davis@example.com",
+    "password": "hashedpassword987",
+    "role": "admin",
+    "avatar": "https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_640.png"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Sushi Haven",
+    "description": "Authentic Japanese sushi with fresh ingredients.",
+    "location": {
+      "latitude": "35.6895",
+      "longitude": "139.6917",
+      "address": "123 Tokyo Street, Japan",
+      "city": "Tokyo",
+      "country": "Japan"
+    },
+    "rating": 4.5,
+    "menu": "660a1f8b5e2b3c001fc9a123",
+    "image": "https://example.com/sushi-haven.jpg"
+  },
+  {
+    "name": "Burger Palace",
+    "description": "Delicious gourmet burgers with premium beef.",
+    "location": {
+      "latitude": "40.7128",
+      "longitude": "-74.0060",
+      "address": "456 New York Ave, USA",
+      "city": "New York",
+      "country": "USA"
+    },
+    "rating": 4.2,
+    "menu": "660a1f8b5e2b3c001fc9a124",
+    "image": "https://example.com/burger-palace.jpg"
+  },
+  {
+    "name": "Pasta Delight",
+    "description": "Homemade Italian pasta with rich flavors.",
+    "location": {
+      "latitude": "41.9028",
+      "longitude": "12.4964",
+      "address": "789 Rome Plaza, Italy",
+      "city": "Rome",
+      "country": "Italy"
+    },
+    "rating": 4.7,
+    "menu": "660a1f8b5e2b3c001fc9a125",
+    "image": "https://example.com/pasta-delight.jpg"
+  }
+]

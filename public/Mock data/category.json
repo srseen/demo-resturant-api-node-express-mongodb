@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Sushi",
+    "description": "A variety of fresh sushi and sashimi dishes.",
+    "menu": "660a1f8b5e2b3c001fc9a101"
+  },
+  {
+    "name": "Burgers",
+    "description": "Gourmet burgers with fresh ingredients and homemade sauces.",
+    "menu": "660a1f8b5e2b3c001fc9a102"
+  },
+  {
+    "name": "Pasta",
+    "description": "Delicious homemade pasta with authentic Italian flavors.",
+    "menu": "660a1f8b5e2b3c001fc9a103"
+  },
+  {
+    "name": "Desserts",
+    "description": "A selection of sweet treats including cakes, pastries, and ice cream.",
+    "menu": "660a1f8b5e2b3c001fc9a104"
+  },
+  {
+    "name": "Beverages",
+    "description": "Refreshing drinks including soft drinks, juices, and coffee.",
+    "menu": "660a1f8b5e2b3c001fc9a105"
+  }
+]

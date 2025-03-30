@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Salmon Sushi",
+    "description": "Fresh salmon sushi served with soy sauce and wasabi.",
+    "price": 12.99,
+    "category": "660a1f8b5e2b3c001fc9a201",
+    "image": "https://example.com/salmon-sushi.jpg"
+  },
+  {
+    "name": "Cheeseburger",
+    "description": "Juicy beef patty with melted cheese, lettuce, and tomato.",
+    "price": 8.99,
+    "category": "660a1f8b5e2b3c001fc9a202",
+    "image": "https://example.com/cheeseburger.jpg"
+  },
+  {
+    "name": "Spaghetti Carbonara",
+    "description": "Classic Italian pasta with bacon, egg, and parmesan cheese.",
+    "price": 14.99,
+    "category": "660a1f8b5e2b3c001fc9a203",
+    "image": "https://example.com/spaghetti-carbonara.jpg"
+  },
+  {
+    "name": "Chocolate Cake",
+    "description": "Rich and moist chocolate cake topped with chocolate ganache.",
+    "price": 6.99,
+    "category": "660a1f8b5e2b3c001fc9a204",
+    "image": "https://example.com/chocolate-cake.jpg"
+  },
+  {
+    "name": "Iced Coffee",
+    "description": "Chilled coffee with milk and sugar, served over ice.",
+    "price": 4.99,
+    "category": "660a1f8b5e2b3c001fc9a205",
+    "image": "https://example.com/iced-coffee.jpg"
+  }
+]
