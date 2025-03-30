@@ -33,6 +33,7 @@ const register = async (req, res) => {
       });
     }
   } catch (error) {
+    console.log("Error in registering user".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,
@@ -80,6 +81,8 @@ const login = async (req, res) => {
       token,
     });
   } catch (error) {
+    console.log("Error in logging in user".white.bgRed);
+    console.log(error);
     return res.status(500).send({
       success: false,
       message: "Internal server error",
@@ -95,6 +98,8 @@ const logout = async (req, res) => {
       message: "User logged out successfully",
     });
   } catch (error) {
+    console.log("Error in logging out user".white.bgRed);
+    console.log(error);
     return res.status(500).send({
       success: false,
       message: "Internal server error",

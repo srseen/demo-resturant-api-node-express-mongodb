@@ -4,12 +4,13 @@ const mongoose = require("mongoose");
 // Function to connect to the database
 const connectDb = async () => {
   try {
-    await mongoose.connect(process.env.MONGO_URL);
+    await mongoose.connect(process.env.MONGO_UR);
     console.log(
       `Connected To Database ${mongoose.connection.host} `.white.bgBlue
     );
   } catch (error) {
-    console.log("DB Error", error);
+    console.log("Connection Failed".white.bgRed);
+    console.log(error);
   }
 };
 

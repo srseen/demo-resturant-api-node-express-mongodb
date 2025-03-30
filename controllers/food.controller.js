@@ -14,6 +14,7 @@ const getFoodAll = async (req, res) => {
       foods,
     });
   } catch (error) {
+    console.log("Error in getting all foods".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,
@@ -43,6 +44,7 @@ const getFoodById = async (req, res) => {
       food,
     });
   } catch (error) {
+    console.log("Error in getting food by id".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,
@@ -74,6 +76,7 @@ const createFood = async (req, res) => {
       food: newFood,
     });
   } catch (error) {
+    console.log("Error in creating food".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,
@@ -102,6 +105,7 @@ const updateFood = async (req, res) => {
       food: updatedFood,
     });
   } catch (error) {
+    console.log("Error in updating food".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,
@@ -125,6 +129,7 @@ const deleteFood = async (req, res) => {
       message: "Food deleted successfully",
     });
   } catch (error) {
+    console.log("Error in deleting food".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,

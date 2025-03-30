@@ -14,6 +14,7 @@ const getResturantAll = async (req, res) => {
       resturants,
     });
   } catch (error) {
+    console.log("Error in getting all resturants".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,
@@ -43,6 +44,7 @@ const getResturantById = async (req, res) => {
       resturant,
     });
   } catch (error) {
+    console.log("Error in getting resturant by id".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,
@@ -75,6 +77,7 @@ const createResturant = async (req, res) => {
       resturant: newResturant,
     });
   } catch (error) {
+    console.log("Error in creating resturant".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,
@@ -103,6 +106,7 @@ const updateResturant = async (req, res) => {
       resturant: updatedResturant,
     });
   } catch (error) {
+    console.log("Error in updating resturant".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,
@@ -126,6 +130,7 @@ const deleteResturant = async (req, res) => {
       message: "Resturant deleted successfully",
     });
   } catch (error) {
+    console.log("Error in deleting resturant".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,

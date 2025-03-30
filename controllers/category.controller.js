@@ -14,6 +14,7 @@ const getCategoryAll = async (req, res) => {
       categories,
     });
   } catch (error) {
+    console.log("Error in getting all categories".white.bgRed);
     console.log(error);
     return res.status(500).send({
       success: false,
@@ -36,6 +37,7 @@ const getCategoryById = async (req, res) => {
       category,
     });
   } catch (error) {
+    console.log("Error in getting category by id".white.bgRed);
     console.log(error);
     res.status(500).send({
       success: false,
@@ -65,6 +67,7 @@ const createCategory = async (req, res) => {
       category: newCategory,
     });
   } catch (error) {
+    console.log("Error in creating category".white.bgRed);
     console.log(error);
     res.status(500).send({
       success: false,
@@ -97,6 +100,7 @@ const updateCategory = async (req, res) => {
       category: updatedCategory,
     });
   } catch (error) {
+    console.log("Error in updating category".white.bgRed);
     console.log(error);
     res.status(500).send({
       success: false,
@@ -120,6 +124,7 @@ const deleteCategory = async (req, res) => {
       message: "Category deleted successfully",
     });
   } catch (error) {
+    console.log("Error in deleting category".white.bgRed);
     console.log(error);
     res.status(500).send({
       success: false,
