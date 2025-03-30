@@ -14,12 +14,15 @@ const {
 // Import auth middleware
 const authMiddleware = require("../middlewares/auth.middleware");
 
+// Import admin middleware
+const adminMiddleware = require("../middlewares/admin.middleware");
+
 // Category routes
 router.get("/", authMiddleware, getCategoryAll);
 router.get("/:id", authMiddleware, getCategoryById);
-router.post("/", authMiddleware, createCategory);
-router.put("/:id", authMiddleware, updateCategory);
-router.delete("/:id", authMiddleware, deleteCategory);
+router.post("/", authMiddleware, adminMiddleware, createCategory);
+router.put("/:id", authMiddleware, adminMiddleware, updateCategory);
+router.delete("/:id", authMiddleware, adminMiddleware, deleteCategory);
 
 // Export the router
 module.exports = router;

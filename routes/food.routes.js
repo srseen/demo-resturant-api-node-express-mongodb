@@ -14,12 +14,15 @@ const {
 // Import auth middleware
 const authMiddleware = require("../middlewares/auth.middleware");
 
+// Import admin middleware
+const adminMiddleware = require("../middlewares/admin.middleware");
+
 // Food routes
 router.get("/", authMiddleware, getFoodAll);
 router.get("/:id", authMiddleware, getFoodById);
-router.post("/", authMiddleware, createFood);
-router.put("/:id", authMiddleware, updateFood);
-router.delete("/:id", authMiddleware, deleteFood);
+router.post("/", authMiddleware, adminMiddleware, createFood);
+router.put("/:id", authMiddleware, adminMiddleware, updateFood);
+router.delete("/:id", authMiddleware, adminMiddleware, deleteFood);
 
 // Export router
 module.exports = router;
