@@ -11,12 +11,15 @@ const {
   deleteResturant,
 } = require("../controllers/resturant.controller");
 
+// Import auth middleware
+const authMiddleware = require("../middlewares/auth.middleware");
+
 // Resturant routes
-router.get("/", getResturantAll);
-router.get("/:id", getResturantById);
-router.post("/", createResturant);
-router.put("/:id", updateResturant);
-router.delete("/:id", deleteResturant);
+router.get("/", authMiddleware, getResturantAll);
+router.get("/:id", authMiddleware, getResturantById);
+router.post("/", authMiddleware, createResturant);
+router.put("/:id", authMiddleware, updateResturant);
+router.delete("/:id", authMiddleware, deleteResturant);
 
 // Export router
 module.exports = router;
