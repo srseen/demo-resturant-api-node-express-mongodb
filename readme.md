@@ -307,3 +307,55 @@ module.exports = {
   deleteResturant,
 };
 ```
+
+# step 7 :
+
+### สร้าง middleware
+
+- middleware สำหรับตรวจสอบ JWT
+
+```jsx
+const jwt = require("jsonwebtoken");
+
+const authMiddleware = (req, res, next) => {
+  const token = req.header("Authorization");
+  if (!token) {
+    return res.status(403).send({ sucsess: false, message: "Access Denied" });
+  }
+  try {
+    const verified = jwt.verify(token, process.env.JWT_SECRET);
+    req.user = verified;
+    next();
+  } catch (err) {
+    res.status(400).send({ sucsess: false, message: "Invalid Token", err });
+  }
+};
+
+module.exports = authMiddleware;
+```
+
+- middleware สำหรับตรวจสอบ admin
+
+```jsx
+const userModel = require("../models/user.model");
+
+const adminMiddleware = async (req, res, next) => {
+  try {
+    const user = await userModel.findById(req.user._id);
+    if (user.role !== "admin") {
+      return res.status(403).send({
+        success: false,
+        message: "Access Denied",
+      });
+    }
+    next();
+  } catch (err) {
+    return res.status(401).send({
+      success: false,
+      message: "Unauthorized",
+    });
+  }
+};
+
+module.exports = adminMiddleware;
+```
